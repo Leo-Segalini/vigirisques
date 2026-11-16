@@ -177,6 +177,7 @@ h3 { color: var(--ink); }
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+  min-width: 0;
 }
 
 .brand {
@@ -200,7 +201,9 @@ h3 { color: var(--ink); }
 .main-nav {
   display: flex;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 34px);
+  gap: clamp(12px, 1.6vw, 28px);
+  min-width: 0;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -209,6 +212,7 @@ h3 { color: var(--ink); }
   color: var(--btn-secondary-text);
   padding: 12px 0;
   transition: color var(--transition);
+  white-space: nowrap;
 }
 .nav-link:hover,
 .footer-col a:hover { color: var(--brand); }
@@ -237,7 +241,13 @@ h3 { color: var(--ink); }
 }
 .dropdown-panel a:hover { background: var(--sand); }
 
-.nav-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.nav-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
 
 .menu-toggle {
   display: none;
@@ -1770,10 +1780,84 @@ main#contenu {
 .form-success p { font-size: var(--text-sm); color: var(--muted); }
 
 /* =========================================================
+   Responsive — petit desktop : nav compacte
+   ========================================================= */
+.btn-label-short { display: none; }
+
+@media (max-width: 1280px) {
+  .main-nav { gap: 12px; }
+  .nav-link { font-size: 0.8125rem; }
+  .nav-actions .btn-outline { display: none; }
+  .nav-actions .btn-small {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.75rem;
+  }
+  .nav-actions .btn-label-full { display: none; }
+  .nav-actions .btn-label-short { display: inline; }
+}
+
+/* =========================================================
+   Responsive — menu hamburger (avant l'écrasement)
+   ========================================================= */
+@media (max-width: 1120px) {
+  :root { --header-h: 72px; }
+
+  .menu-toggle { display: flex; }
+
+  .main-nav {
+    display: none;
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--page);
+    padding: 20px var(--gutter) 32px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    overflow-y: auto;
+    z-index: 40;
+    border-top: 1px solid var(--line);
+    flex-wrap: nowrap;
+  }
+  .main-nav.open { display: flex; }
+  .nav-link {
+    width: 100%;
+    text-align: left;
+    padding: 14px 0;
+    font-size: 1rem;
+  }
+  .dropdown-panel {
+    position: static;
+    box-shadow: none;
+    border: 0;
+    background: var(--surface-2);
+    margin-bottom: 8px;
+    min-width: 0;
+  }
+  .nav-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .nav-actions .btn-outline { display: inline-flex; }
+  .nav-actions .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: var(--text-sm);
+  }
+  .nav-actions .btn-label-full { display: inline; }
+  .nav-actions .btn-label-short { display: none; }
+}
+
+/* =========================================================
    Responsive — large tablet / small desktop
    ========================================================= */
 @media (max-width: 1100px) {
-  :root { --header-h: 76px; }
+  :root { --header-h: 72px; }
 
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -1804,51 +1888,6 @@ main#contenu {
    ========================================================= */
 @media (max-width: 900px) {
   :root { --header-h: 70px; }
-
-  .menu-toggle { display: flex; }
-
-  .main-nav {
-    display: none;
-    position: fixed;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--page);
-    padding: 20px var(--gutter) 32px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    overflow-y: auto;
-    z-index: 40;
-    border-top: 1px solid var(--line);
-  }
-  .main-nav.open { display: flex; }
-  .nav-link {
-    width: 100%;
-    text-align: left;
-    padding: 14px 0;
-    font-size: 1rem;
-  }
-  .dropdown-panel {
-    position: static;
-    box-shadow: none;
-    border: 0;
-    background: var(--surface-2);
-    margin-bottom: 8px;
-    min-width: 0;
-  }
-  .nav-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-    margin-top: 16px;
-  }
-  .nav-actions .btn {
-    width: 100%;
-    min-height: 48px;
-    font-size: var(--text-sm);
-  }
 
   .hero {
     grid-template-columns: 1fr;
@@ -2198,11 +2237,16 @@ main#contenu {
 .consent a { color: var(--brand); text-decoration: underline; }
 .demo-help a { color: inherit; text-decoration: underline; }
 
+@media (max-width: 1120px) {
+  .page-nav {
+    display: flex !important;
+    position: static !important;
+  }
+  .page-nav .nav-link { width: auto; padding: 0; font-size: var(--text-sm); }
+}
 @media (max-width: 900px) {
   .audience-grid,
   .faq-layout { grid-template-columns: 1fr; }
-  .page-nav { display: flex !important; }
-  .page-nav .nav-link { width: auto; padding: 0; font-size: var(--text-sm); }
 }
 @media (max-width: 640px) {
   .page-nav .nav-link:not(.btn) { display: none; }

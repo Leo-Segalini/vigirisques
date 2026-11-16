@@ -3,7 +3,7 @@ const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 
 const menuToggle = $(".menu-toggle");
 const mainNav = $(".main-nav");
-const MQ_NAV = 900;
+const MQ_NAV = 1120;
 
 function setNavOpen(open) {
   mainNav?.classList.toggle("open", open);
