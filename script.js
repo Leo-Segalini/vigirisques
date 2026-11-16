@@ -159,9 +159,9 @@ $("#demo-form")?.addEventListener("submit", (e) => {
     `Email: ${data.get("email") || ""}`,
     `Profil: ${data.get("profile") || ""}`,
     "",
-    "Demande de démonstration VigiRisques envoyée depuis le site.",
+    "Demande de démonstration IA VigiRisques envoyée depuis le site.",
   ];
-  const subject = encodeURIComponent("Demande de démonstration VigiRisques");
+  const subject = encodeURIComponent("Demande de démonstration IA VigiRisques");
   const body = encodeURIComponent(lines.join("\n"));
   const mailto = `mailto:contact@vigirisques.fr?subject=${subject}&body=${body}`;
 
