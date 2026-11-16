@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO & GEO — Documentation</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav class="sidebar" aria-label="Navigation documentation">
+    <div class="sidebar-header">
+      <a href="../index.html" class="logo">Docs VigiRisques</a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li class="nav-section">Features
+        <ul>
+          <li><a href="responsive-design.html">Responsive & design</a></li>
+          <li><a href="charte-couleurs.html">Charte couleurs</a></li>
+          <li><a href="seo-geo.html" aria-current="page">SEO & GEO</a></li>
+        </ul>
+      </li>
+      <li><a href="../changelog.html">Changelog</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <header class="page-header">
+      <h1>SEO & GEO</h1>
+      <div class="meta">
+        <span class="badge badge-version">v1.3.0</span>
+        <span class="meta-date">Mis à jour le 2026-11-16</span>
+        <span class="badge badge-stable">Stable</span>
+      </div>
+    </header>
+    <section class="doc-section">
+      <h2>Description</h2>
+      <p>Optimisation SEO classique et GEO (réponses claires pour moteurs génératifs) : métadonnées, données structurées, FAQ, contenus sans placeholders, liens internes valides.</p>
+    </section>
+    <section class="doc-section">
+      <h2>Livrables</h2>
+      <ul>
+        <li>Meta / Open Graph / Twitter / canonical</li>
+        <li>JSON-LD Organization, WebSite, SoftwareApplication, FAQPage, Article</li>
+        <li><code>robots.txt</code> + <code>sitemap.xml</code></li>
+        <li>Pages légales et 3 guides indexables</li>
+        <li>Suppression des liens morts et des champs placeholder</li>
+      </ul>
+    </section>
+    <section class="doc-section">
+      <h2>Fichiers</h2>
+      <table class="files-table">
+        <thead><tr><th>Fichier</th><th>Rôle</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>index.html</code></td><td>Landing SEO/GEO</td><td><span class="badge badge-modified">Modifié</span></td></tr>
+          <tr><td><code>guides/*.html</code></td><td>Contenus indexables</td><td><span class="badge badge-created">Créé</span></td></tr>
+          <tr><td><code>mentions-legales.html</code></td><td>Légal</td><td><span class="badge badge-created">Créé</span></td></tr>
+          <tr><td><code>confidentialite.html</code></td><td>RGPD</td><td><span class="badge badge-created">Créé</span></td></tr>
+          <tr><td><code>robots.txt</code> / <code>sitemap.xml</code></td><td>Crawl</td><td><span class="badge badge-created">Créé</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="doc-section">
+      <h2>Sécurité</h2>
+      <ul class="checklist">
+        <li class="check-pass">✅ Aucun secret dans le front</li>
+        <li class="check-pass">✅ Formulaire via mailto (pas d'API exposée)</li>
+        <li class="check-warn">⚠️ Compléter SIREN / hébergeur dans mentions légales avant prod juridique</li>
+        <li class="check-warn">⚠️ Adapter le domaine dans canonical/sitemap si différent de vigirisques.fr</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charte couleurs — Documentation</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .swatch-color { height: 64px; }
+    .swatch-meta { padding: 10px; font-size: 13px; }
+    .swatch-meta code { font-size: 12px; }
+  </style>
+</head>
+<body>
+  <nav class="sidebar" aria-label="Navigation documentation">
+    <div class="sidebar-header">
+      <a href="../index.html" class="logo">Docs VigiRisques</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer le thème"><span class="theme-icon">◐</span></button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li class="nav-section">Features
+        <ul>
+          <li><a href="responsive-design.html">Responsive & design</a></li>
+          <li><a href="charte-couleurs.html" aria-current="page">Charte couleurs</a></li>
+        </ul>
+      </li>
+      <li><a href="../changelog.html">Changelog</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <header class="page-header">
+      <h1>Charte couleurs</h1>
+      <div class="meta">
+        <span class="badge badge-version">v1.2.0</span>
+        <span class="meta-date">Mis à jour le 2026-11-16</span>
+        <span class="badge badge-stable">Stable</span>
+      </div>
+    </header>
+    <section class="doc-section">
+      <h2>Marque</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#1E3A8A"></div><div class="swatch-meta">Bleu principal<br><code>#1E3A8A</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#1F346C"></div><div class="swatch-meta">Titres H1/H2<br><code>#1F346C</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#213467"></div><div class="swatch-meta">Texte bouton secondaire<br><code>#213467</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#C5DAF7"></div><div class="swatch-meta">Bordure secondaire<br><code>#C5DAF7</code></div></div>
+      </div>
+    </section>
+    <section class="doc-section">
+      <h2>Fonds</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#EEF2FE"></div><div class="swatch-meta">Hero / pastilles<br><code>#EEF2FE</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#FAFBFD"></div><div class="swatch-meta">Fond de page<br><code>#FAFBFD</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border-bottom:1px solid #e2e8f0"></div><div class="swatch-meta">Cartes<br><code>#FFFFFF</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#F0F4F8"></div><div class="swatch-meta">Piste score<br><code>#F0F4F8</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#CBD1DD"></div><div class="swatch-meta">Bordure champs<br><code>#CBD1DD</code></div></div>
+      </div>
+    </section>
+    <section class="doc-section">
+      <h2>Risques</h2>
+      <div class="swatch-grid">
+        <div class="swatch"><div class="swatch-color" style="background:#AD4B02"></div><div class="swatch-meta">Score<br><code>#AD4B02</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#FEF2F2"></div><div class="swatch-meta">Élevé fond<br><code>#FEF2F2</code> / <code>#982020</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#FEF6EC"></div><div class="swatch-meta">Modéré fond<br><code>#FEF6EC</code> / <code>#A74012</code></div></div>
+        <div class="swatch"><div class="swatch-color" style="background:#EEF6FE"></div><div class="swatch-meta">À anticiper<br><code>#EEF6FE</code> / <code>#223363</code></div></div>
+      </div>
+    </section>
+    <section class="doc-section">
+      <h2>Fichiers</h2>
+      <table class="files-table">
+        <thead><tr><th>Fichier</th><th>Rôle</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td><code>styles.css</code></td><td>Tokens `:root` et composants</td><td><span class="badge badge-modified">Modifié</span></td></tr>
+          <tr><td><code>index.html</code></td><td>theme-color + SVG mission</td><td><span class="badge badge-modified">Modifié</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+</body>
+</html>

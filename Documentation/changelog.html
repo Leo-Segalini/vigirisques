@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog — Documentation</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav class="sidebar" aria-label="Navigation documentation">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo">Docs VigiRisques</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer le thème"><span class="theme-icon">◐</span></button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html">Accueil</a></li>
+      <li class="nav-section">Features
+        <ul>
+          <li><a href="features/responsive-design.html">Responsive & design</a></li>
+        </ul>
+      </li>
+      <li><a href="changelog.html" aria-current="page">Changelog</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <header class="page-header">
+      <h1>Changelog</h1>
+    </header>
+    <section class="doc-section">
+      <div class="changelog-entry">
+        <span class="changelog-date">2026-11-16</span>
+        <span class="changelog-version">v1.3.0</span>
+        <p>SEO/GEO production : meta, schema.org, FAQ, guides, pages légales, sitemap, suppression placeholders et liens morts.</p>
+      </div>
+      <div class="changelog-entry">
+        <span class="changelog-date">2026-11-16</span>
+        <span class="changelog-version">v1.2.0</span>
+        <p>Application de la charte couleur bleue (#1E3A8A), fonds #EEF2FE / #FAFBFD, textes et niveaux de risque (élevé / modéré / à anticiper).</p>
+      </div>
+      <div class="changelog-entry">
+        <span class="changelog-date">2026-11-16</span>
+        <span class="changelog-version">v1.1.0</span>
+        <p>Design system unifié (tokens, typo fluide, surfaces). Responsive renforcé (1100 / 900 / 640 / 380). Nav mobile, hero, features 5 cartes, démo, modal et cookies améliorés.</p>
+      </div>
+      <div class="changelog-entry">
+        <span class="changelog-date">2026-11-16</span>
+        <span class="changelog-version">v1.0.0</span>
+        <p>Landing page initiale HTML / CSS / JS.</p>
+      </div>
+    </section>
+  </main>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — VigiRisques</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <nav class="sidebar" aria-label="Navigation documentation">
+    <div class="sidebar-header">
+      <a href="index.html" class="logo">Docs VigiRisques</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer le thème"><span class="theme-icon">◐</span></button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="index.html" aria-current="page">Accueil</a></li>
+      <li class="nav-section">Features
+        <ul>
+          <li><a href="features/responsive-design.html">Responsive & design</a></li>
+          <li><a href="features/charte-couleurs.html">Charte couleurs</a></li>
+          <li><a href="features/seo-geo.html">SEO & GEO</a></li>
+        </ul>
+      </li>
+      <li class="nav-section">Architecture
+        <ul>
+          <li><a href="architecture/overview.html">Vue d'ensemble</a></li>
+        </ul>
+      </li>
+      <li><a href="changelog.html">Changelog</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <header class="page-header">
+      <h1>Documentation VigiRisques</h1>
+      <p>Landing page HTML/CSS/JS pour anticiper les risques cycloniques.</p>
+    </header>
+    <section class="doc-section">
+      <h2>Pages</h2>
+      <ul>
+        <li><a href="features/responsive-design.html">Responsive & design cohérent</a> — tokens, breakpoints, comportements mobile</li>
+        <li><a href="architecture/overview.html">Architecture</a> — structure des fichiers et responsabilités</li>
+        <li><a href="changelog.html">Changelog</a></li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+</body>
+</html>

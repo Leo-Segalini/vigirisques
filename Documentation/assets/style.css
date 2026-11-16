@@ -1,0 +1,146 @@
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f1f3f5;
+  --text: #1a1a2e;
+  --text-secondary: #4a5568;
+  --border: #e2e8f0;
+  --accent: #1E3A8A;
+  --accent-light: #EEF2FE;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --code-bg: #1e1e2e;
+  --sidebar-width: 260px;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0f1117;
+  --bg-secondary: #1a1d27;
+  --bg-tertiary: #252836;
+  --text: #e8eaf0;
+  --text-secondary: #9aa0b4;
+  --border: #2d3148;
+  --accent: #8fb39a;
+  --accent-light: #1e3a2f;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --code-bg: #0d0f18;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+}
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+  flex-shrink: 0;
+}
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.logo { font-weight: 800; color: var(--accent); text-decoration: none; }
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+.nav-list { list-style: none; padding: 0; margin: 0; }
+.nav-list a {
+  display: block;
+  padding: 8px 10px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+}
+.nav-list a:hover, .nav-list a[aria-current="page"] {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+.nav-section { margin-top: 16px; font-size: 12px; font-weight: 700; color: var(--text-secondary); }
+.nav-section ul { list-style: none; padding: 8px 0 0; margin: 0; }
+.content { flex: 1; padding: 40px clamp(20px, 4vw, 56px); max-width: 920px; }
+.page-header h1 { margin: 8px 0 12px; font-size: 2rem; }
+.breadcrumb { font-size: 13px; color: var(--text-secondary); display: flex; gap: 8px; flex-wrap: wrap; }
+.breadcrumb a { color: var(--accent); }
+.meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 28px; }
+.meta-date { font-size: 13px; color: var(--text-secondary); }
+.badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.badge-version, .badge-stable { background: var(--accent-light); color: var(--accent); }
+.badge-created { background: #dcfce7; color: #166534; }
+.badge-modified { background: #ffedd5; color: #9a3412; }
+.doc-section { margin-bottom: 36px; }
+.doc-section h2 { font-size: 1.35rem; margin-bottom: 12px; }
+.doc-section p, .doc-section li { color: var(--text-secondary); line-height: 1.65; }
+.files-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.files-table th, .files-table td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+}
+.files-table th { background: var(--bg-secondary); }
+.code-block {
+  background: var(--code-bg);
+  color: #e8eaf0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #2a2d3a;
+  font-size: 12px;
+}
+.copy-btn {
+  background: transparent;
+  border: 1px solid #4b5168;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.code-block pre { margin: 0; padding: 16px; overflow: auto; }
+.checklist { list-style: none; padding: 0; }
+.checklist li { padding: 6px 0; }
+.changelog-entry {
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  margin-bottom: 12px;
+  background: var(--bg-secondary);
+  border-radius: 0 8px 8px 0;
+}
+.changelog-date, .changelog-version {
+  font-size: 12px;
+  font-weight: 700;
+  margin-right: 8px;
+}
+@media (max-width: 800px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; position: static; }
+}

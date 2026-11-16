@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1E3A8A">
+  <title>VigiRisques — Prévention cyclonique à partir d'une photo</title>
+  <meta name="description" content="VigiRisques aide les collectivités et les assureurs à anticiper les risques cycloniques : analyse photo de l'extérieur, score de résilience, plan d'action priorisé et rapport PDF. Données hébergées en France.">
+  <meta name="keywords" content="prévention cyclonique, risques cyclones, collectivités, assureurs, résilience habitat, plan d'action, Antilles, outre-mer, VigiRisques">
+  <meta name="author" content="VigiRisques">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://www.vigirisques.fr/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="VigiRisques">
+  <meta property="og:url" content="https://www.vigirisques.fr/">
+  <meta property="og:title" content="VigiRisques — Prévention cyclonique à partir d'une photo">
+  <meta property="og:description" content="Analysez un extérieur en une photo, obtenez un score de résilience et un plan d'action priorisé. Conçu pour les collectivités et les assureurs.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85">
+  <meta property="og:image:alt" content="Maison et jardin préparés pour la saison cyclonique">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VigiRisques — Prévention cyclonique à partir d'une photo">
+  <meta name="twitter:description" content="De la photo au plan d'action : un outil de prévention cyclonique pour collectivités et assureurs.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.vigirisques.fr/#organization",
+        "name": "VigiRisques",
+        "url": "https://www.vigirisques.fr/",
+        "logo": "https://www.vigirisques.fr/favicon.svg",
+        "email": "contact@vigirisques.fr",
+        "description": "Solution de prévention cyclonique qui transforme une photo d'extérieur en plan d'action priorisé pour les collectivités et les assureurs.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "France"
+        },
+        "knowsAbout": ["prévention cyclonique", "résilience habitat", "risques naturels"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.vigirisques.fr/#website",
+        "url": "https://www.vigirisques.fr/",
+        "name": "VigiRisques",
+        "publisher": { "@id": "https://www.vigirisques.fr/#organization" },
+        "inLanguage": "fr-FR"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://www.vigirisques.fr/#app",
+        "name": "VigiRisques",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Démonstration sur demande"
+        },
+        "description": "Application web de prévention cyclonique : analyse photo, détection d'éléments exposés, score de résilience, plan d'action et rapport PDF.",
+        "provider": { "@id": "https://www.vigirisques.fr/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.vigirisques.fr/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qu'est-ce que VigiRisques ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VigiRisques est une solution numérique de prévention cyclonique. À partir d'une photo de l'extérieur d'une habitation, elle aide à repérer les éléments exposés, calcule un score de résilience et propose un plan d'action priorisé, exportable en PDF."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Pour qui est destinée la solution ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VigiRisques s'adresse aux collectivités (mairies, intercommunalités), aux assureurs et aux courtiers qui souhaitent sensibiliser et accompagner les habitants avant la saison cyclonique."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où sont hébergées les données ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Les données sont hébergées en France. Les photos sont supprimées après analyse, sauf contribution facultative avec consentement révocable. Les visages, plaques et localisations précises sont anonymisés."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "VigiRisques remplace-t-il un diagnostic professionnel ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non. VigiRisques fournit un éclairage et un plan d'actions concrètes. Le niveau de confiance de chaque détection est affiché. L'outil n'est pas un diagnostic technique certifié."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header" id="top">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="VigiRisques, accueil">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 34 9v10c0 9-6 14-14 18C12 33 6 28 6 19V9L20 3Z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 21c5-1 8-5 10-11 2 7 4 10 8 12-4 1-7 4-10 8-2-5-4-7-8-9Z" fill="currentColor"/></svg></span>
+        <span>vigi<span>risques</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a class="nav-link" href="#solutions">Solutions</a>
+        <a class="nav-link" href="#demo-produit">Comment ça marche</a>
+        <a class="nav-link" href="#confiance">Confiance</a>
+        <a class="nav-link" href="#ressources">Ressources</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <div class="nav-actions">
+          <a class="btn btn-outline btn-small" href="#demo-produit">Essayer la démo</a>
+          <button class="btn btn-primary btn-small" type="button" data-demo>Demander une démonstration</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Prévention cyclonique pour les territoires</span>
+        <h1 id="hero-title">Anticipez l'impact des cyclones à partir d'une <em>simple photo.</em></h1>
+        <p class="hero-lead">VigiRisques aide les collectivités et les assureurs à repérer les objets exposés sur un extérieur, à prioriser les gestes utiles et à partager un plan d'action clair avec chaque foyer.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" type="button" data-demo>Demander une démonstration <span aria-hidden="true">↗</span></button>
+          <a class="btn btn-soft" href="#demo-produit">Voir comment ça marche <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-note">
+          <span class="avatar-stack" aria-hidden="true"><i>●</i><i>●</i><i>●</i></span>
+          <span>Collectivités · Assureurs · Courtiers · Données hébergées en France</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Photographies illustrant l'analyse d'une habitation">
+        <div class="photo photo-main"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=85" width="1100" height="760" alt="Maison contemporaine entourée de végétation, extérieur à sécuriser avant un cyclone"><span class="photo-caption">Un extérieur mieux préparé</span></div>
+        <div class="photo photo-family"><img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?auto=format&fit=crop&w=650&q=85" width="650" height="480" alt="Famille réunie dans un jardin résidentiel"></div>
+        <div class="photo photo-garden"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=650&q=85" width="650" height="480" alt="Terrasse avec mobilier extérieur potentiellement exposé au vent"></div>
+        <div class="photo photo-agent"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=650&q=85" width="650" height="480" alt="Équipes professionnelles consultant une tablette" loading="lazy"></div>
+        <div class="detection-card" aria-hidden="true"><div class="detection-top"><span class="live-dot"></span> Analyse de l'extérieur</div><div class="detected-image"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80" width="700" height="400" alt=""><span class="detect-box box-one">Parasol</span><span class="detect-box box-two">Salon</span><span class="detect-box box-three">Pots</span></div><div class="detection-foot"><span>3 éléments repérés</span><strong>Voir les priorités →</strong></div></div>
+        <div class="floating-leaf" aria-hidden="true">✳</div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Publics accompagnés">
+      <div class="container trust-inner">
+        <span class="trust-label">Conçu pour</span>
+        <div class="logo-marquee"><div class="logo-track">
+          <span class="logo-placeholder">Mairies</span>
+          <span class="logo-placeholder">Intercommunalités</span>
+          <span class="logo-placeholder">Assureurs</span>
+          <span class="logo-placeholder">Courtiers</span>
+          <span class="logo-placeholder">Services prévention</span>
+          <span class="logo-placeholder">Territoires d'outre-mer</span>
+          <span class="logo-placeholder">Mairies</span>
+          <span class="logo-placeholder">Intercommunalités</span>
+          <span class="logo-placeholder">Assureurs</span>
+          <span class="logo-placeholder">Courtiers</span>
+          <span class="logo-placeholder">Services prévention</span>
+          <span class="logo-placeholder">Territoires d'outre-mer</span>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="stats-section section-pad-sm" aria-label="Points clés de la solution">
+      <div class="container stats-grid">
+        <div class="stat"><span class="stat-icon" aria-hidden="true">⌂</span><strong>1 photo</strong><span>pour lancer l'analyse</span></div>
+        <div class="stat"><span class="stat-icon" aria-hidden="true">◎</span><strong>3 priorités</strong><span>immédiat · 24 h · anticiper</span></div>
+        <div class="stat"><span class="stat-icon" aria-hidden="true">↗</span><strong>1 PDF</strong><span>rapport partageable</span></div>
+        <div class="stat"><span class="stat-icon" aria-hidden="true">♡</span><strong>100 % FR</strong><span>données hébergées en France</span></div>
+      </div>
+    </section>
+
+    <section class="mission section-pad" id="mission">
+      <div class="container mission-grid">
+        <div class="mission-art">
+          <div class="sun-disc" aria-hidden="true"></div>
+          <div class="house-illustration">
+            <svg viewBox="0 0 420 300" role="img" aria-label="Illustration d'une maison protégée">
+              <path d="M50 144 210 35l160 109" fill="none" stroke="#1F346C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M82 137v124h256V137" fill="#EEF2FE" stroke="#1F346C" stroke-width="8" stroke-linejoin="round"/>
+              <path d="M178 261v-83h64v83" fill="#C5DAF7" stroke="#1F346C" stroke-width="7"/>
+              <rect x="108" y="164" width="48" height="45" rx="4" fill="#FAFBFD" stroke="#1F346C" stroke-width="6"/>
+              <rect x="265" y="164" width="48" height="45" rx="4" fill="#FAFBFD" stroke="#1F346C" stroke-width="6"/>
+              <path d="M35 263h350" stroke="#1F346C" stroke-width="8" stroke-linecap="round"/>
+              <path d="M53 226c-12-23-3-45 17-52 1 21 2 37-17 52Zm0 0c-2-22 10-36 29-38-2 19-11 32-29 38Zm316 9c-9-21-2-40 17-47 2 18 0 34-17 47Zm0 0c-1-20 10-33 27-35-1 17-10 29-27 35Z" fill="#7B96D6"/>
+            </svg>
+          </div>
+          <span class="art-label">Prévenir, c'est déjà protéger.</span>
+        </div>
+        <div class="mission-copy">
+          <span class="eyebrow">Notre mission</span>
+          <h2>Mieux vivre la saison cyclonique.</h2>
+          <p>VigiRisques est une solution de prévention cyclonique qui transforme une photo d'extérieur en décisions concrètes. Avant les alertes, les équipes territoriales et assurancielles peuvent sensibiliser les habitants, suivre les actions recommandées et partager un rapport lisible.</p>
+          <a class="text-link" href="#confiance">Voir nos engagements confiance <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="features section-pad" id="solutions">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="eyebrow">De la photo à l'action</span>
+          <h2>Donnez à vos habitants et assurés<br>les bons réflexes.</h2>
+          <p>Un parcours guidé pour transformer l'observation d'un jardin ou d'une terrasse en plan de prévention priorisé.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card" id="solutions-collectivites">
+            <span class="eyebrow">Collectivités</span>
+            <h3>Sensibilisez le territoire avant la saison</h3>
+            <p>Mairies et intercommunalités accompagnent les foyers avec un outil simple, un discours commun et un suivi des actions de prévention.</p>
+            <a class="text-link" href="#contact">Échanger pour votre commune <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="audience-card" id="solutions-assurances">
+            <span class="eyebrow">Assurances & courtiers</span>
+            <h3>Accompagnez vos assurés avec des gestes clairs</h3>
+            <p>Proposez un parcours de prévention utile, un score compréhensible et un rapport PDF à conserver ou à transmettre.</p>
+            <a class="text-link" href="#contact">Demander une démonstration <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-head"><span class="mini-icon" aria-hidden="true">▧</span><span class="feature-index">01</span></div>
+            <h3>Une photo suffit</h3>
+            <p>Photographiez le jardin ou la terrasse, sans matériel particulier ni visite technique préalable.</p>
+            <div class="mini-screen photo-screen"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=650&q=80" width="650" height="400" alt="Exemple de photo d'extérieur analysée" loading="lazy"><span class="scan-line" aria-hidden="true"></span><span class="screen-chip">Ajouter une photo +</span></div>
+            <a class="text-link" href="#demo-produit">Voir l'étape photo <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-head"><span class="mini-icon" aria-hidden="true">⌖</span><span class="feature-index">02</span></div>
+            <h3>Les risques sont repérés</h3>
+            <p>Les éléments exposés (parasol, mobilier, pots) sont identifiés avec un niveau de confiance visible.</p>
+            <div class="mini-screen detection-screen">
+              <div class="detect-row"><span>Parasol</span><b class="risk-high">Élevé</b></div>
+              <div class="detect-row"><span>Salon de jardin</span><b class="risk-medium">Modéré</b></div>
+              <div class="detect-row"><span>Pots</span><b class="risk-low">À vérifier</b></div>
+              <small>Niveau de confiance affiché</small>
+            </div>
+            <a class="text-link" href="#demo-produit">Voir la détection <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-head"><span class="mini-icon" aria-hidden="true">◉</span><span class="feature-index">03</span></div>
+            <h3>Un score de résilience</h3>
+            <p>Une lecture synthétique sur 100 pour visualiser les progrès et les points à traiter en priorité.</p>
+            <div class="mini-screen score-screen">
+              <div class="score-ring"><strong>72</strong><small>/100</small></div>
+              <span class="score-status">Votre extérieur est perfectible</span>
+              <div class="score-bars" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <a class="text-link" href="#demo-produit">Comprendre le score <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-head"><span class="mini-icon" aria-hidden="true">☷</span><span class="feature-index">04</span></div>
+            <h3>Un plan d'action priorisé</h3>
+            <p>Les bons gestes sont classés : immédiatement, dans les 24 heures, ou à anticiper.</p>
+            <div class="mini-screen action-screen">
+              <div><b class="action-dot urgent"></b><span><strong>Immédiatement</strong><small>Ranger les objets légers</small></span></div>
+              <div><b class="action-dot soon"></b><span><strong>Dans les 24 h</strong><small>Fixer le mobilier extérieur</small></span></div>
+              <div><b class="action-dot later"></b><span><strong>À anticiper</strong><small>Prévoir un rangement abrité</small></span></div>
+            </div>
+            <a class="text-link" href="#demo-produit">Voir le plan d'action <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="feature-card">
+            <div class="feature-head"><span class="mini-icon" aria-hidden="true">▤</span><span class="feature-index">05</span></div>
+            <h3>Un rapport PDF à partager</h3>
+            <p>Un document lisible pour garder une trace, informer un foyer ou faciliter le suivi d'équipe.</p>
+            <div class="mini-screen pdf-screen">
+              <div class="pdf-page"><span class="pdf-brand">VigiRisques</span><b>Mon plan de prévention</b><span class="pdf-line"></span><span class="pdf-line short"></span><div class="pdf-score">72 <small>/100</small></div><span class="pdf-line"></span><span class="pdf-line short"></span></div>
+              <span class="pdf-download">↓ Télécharger le rapport</span>
+            </div>
+            <a class="text-link" href="#demo-produit">Voir le rapport <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-demo section-pad" id="demo-produit">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Démonstration interactive</span>
+          <h2>Un outil simple pour vos équipes.</h2>
+          <p>Parcourez le flux complet : photo, détection, plan d'action et rapport PDF. Les données affichées sont des exemples illustratifs.</p>
+        </div>
+        <div class="demo-shell">
+          <div class="demo-sidebar">
+            <span class="demo-brand">vigi<span>risques</span></span>
+            <p class="demo-greeting">Bonjour, Camille</p>
+            <small>Votre espace de prévention</small>
+            <div class="demo-tabs" role="tablist" aria-label="Étapes de démonstration">
+              <button class="demo-tab active" type="button" role="tab" aria-selected="true" data-tab="photo"><span>01</span> Photo</button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-tab="detection"><span>02</span> Détection</button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-tab="plan"><span>03</span> Plan d'action</button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-tab="rapport"><span>04</span> Rapport PDF</button>
+            </div>
+            <div class="demo-help"><span>Besoin d'aide ?</span><b><a href="mailto:contact@vigirisques.fr">contact@vigirisques.fr</a></b></div>
+          </div>
+          <div class="demo-content">
+            <div class="demo-content-top">
+              <span id="demo-kicker">ÉTAPE 1 · VOTRE EXTÉRIEUR</span>
+              <span class="demo-status"><i></i> Démonstration interactive</span>
+            </div>
+            <div class="demo-panel active" data-panel="photo">
+              <div class="panel-copy">
+                <h3>Commençons par une photo.</h3>
+                <p>Une vue d'ensemble de l'extérieur permet de lancer l'analyse sans visite préalable.</p>
+                <button class="btn btn-primary btn-small" type="button" data-next="detection">Voir la détection →</button>
+              </div>
+              <div class="upload-preview"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85" width="1000" height="700" alt="Exemple de terrasse analysée dans la démo" loading="lazy"><div class="upload-badge">✓ Photo ajoutée</div></div>
+            </div>
+            <div class="demo-panel" data-panel="detection">
+              <div class="panel-copy">
+                <h3>Voici les éléments repérés.</h3>
+                <p>Chaque élément est accompagné d'une indication de risque et d'un niveau de confiance.</p>
+                <button class="btn btn-primary btn-small" type="button" data-next="plan">Voir le plan d'action →</button>
+              </div>
+              <div class="detection-list">
+                <div class="detection-item"><span class="item-symbol" aria-hidden="true">☂</span><span><b>Parasol</b><small>Confiance élevée</small></span><strong class="risk-high">Risque élevé</strong></div>
+                <div class="detection-item"><span class="item-symbol" aria-hidden="true">▦</span><span><b>Salon de jardin</b><small>Confiance élevée</small></span><strong class="risk-medium">Risque modéré</strong></div>
+                <div class="detection-item"><span class="item-symbol" aria-hidden="true">♧</span><span><b>Pots décoratifs</b><small>Confiance moyenne</small></span><strong class="risk-medium">À sécuriser</strong></div>
+              </div>
+            </div>
+            <div class="demo-panel" data-panel="plan">
+              <div class="panel-copy">
+                <h3>Les prochaines actions, dans l'ordre.</h3>
+                <p>Un plan lisible pour savoir quoi faire maintenant et quoi prévoir ensuite.</p>
+                <button class="btn btn-primary btn-small" type="button" data-next="rapport">Voir le rapport →</button>
+              </div>
+              <div class="plan-list">
+                <div class="plan-group"><b><i class="urgent"></i> Immédiatement</b><span>Ranger le parasol et les objets légers</span></div>
+                <div class="plan-group"><b><i class="soon"></i> Dans les 24 h</b><span>Mettre le mobilier à l'abri ou le fixer</span></div>
+                <div class="plan-group"><b><i class="later"></i> À anticiper</b><span>Prévoir une zone de rangement protégée</span></div>
+              </div>
+            </div>
+            <div class="demo-panel" data-panel="rapport">
+              <div class="panel-copy">
+                <h3>Un rapport prêt à partager.</h3>
+                <p>Retrouvez le score, les observations et les actions recommandées dans un document PDF.</p>
+                <button class="btn btn-primary btn-small" type="button" data-next="photo">Recommencer la visite ↺</button>
+              </div>
+              <div class="report-preview">
+                <div class="report-sheet">
+                  <span>VigiRisques</span>
+                  <h4>Rapport de prévention</h4>
+                  <p>Évaluation de l'extérieur</p>
+                  <div class="report-score">72<small>/100</small></div>
+                  <b>Plan d'action personnalisé</b>
+                  <hr>
+                  <i></i><i></i><i></i>
+                  <small>Exemple d'interface · données illustratives</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="culture section-pad" id="territoires">
+      <div class="container culture-grid">
+        <div class="culture-copy">
+          <span class="eyebrow">Agir à l'échelle du territoire</span>
+          <h2>Construisez une culture de prévention.</h2>
+          <p>VigiRisques donne aux équipes un support concret pour sensibiliser, accompagner et suivre les actions avant la saison cyclonique — en particulier sur les territoires exposés en outre-mer et sur le littoral.</p>
+          <a class="text-link" href="#contact">Échanger sur votre projet <span aria-hidden="true">↗</span></a>
+          <div class="benefit-grid">
+            <div><strong>3 niveaux</strong><span>de priorité d'action</span></div>
+            <div><strong>&lt; 5 min</strong><span>pour un premier parcours guidé</span></div>
+            <div><strong>1 rapport</strong><span>PDF par analyse</span></div>
+            <div><strong>FR</strong><span>hébergement des données</span></div>
+          </div>
+        </div>
+        <div class="phone-scene">
+          <div class="phone-shadow" aria-hidden="true"></div>
+          <div class="phone" aria-label="Aperçu mobile de l'application VigiRisques">
+            <div class="phone-notch" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="phone-top"><span>9:41</span><span aria-hidden="true">●●● ▰</span></div>
+              <div class="phone-brand">vigi<span>risques</span></div>
+              <p class="phone-hello">Bonjour Camille</p>
+              <small>Votre plan de prévention</small>
+              <div class="phone-score"><span>Score de résilience</span><b>72<small>/100</small></b><i><em></em></i></div>
+              <h4>Vos prochaines actions</h4>
+              <div class="phone-task"><i class="urgent"></i><span><b>Immédiatement</b><small>Ranger le parasol</small></span><span aria-hidden="true">›</span></div>
+              <div class="phone-task"><i class="soon"></i><span><b>Dans les 24 h</b><small>Sécuriser le mobilier</small></span><span aria-hidden="true">›</span></div>
+              <div class="phone-task"><i class="later"></i><span><b>À anticiper</b><small>Prévoir un abri</small></span><span aria-hidden="true">›</span></div>
+              <div class="phone-nav" aria-hidden="true"><span>⌂</span><span>☷</span><span>▤</span><span>○</span></div>
+            </div>
+          </div>
+          <span class="phone-sticker">Un geste après l'autre.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section-pad" id="temoignages" aria-labelledby="temoignages-title">
+      <div class="container">
+        <div class="testimonial-head">
+          <div>
+            <span class="eyebrow">Retours de partenaires pilotes</span>
+            <h2 id="temoignages-title">La prévention se construit ensemble.</h2>
+          </div>
+          <div class="carousel-controls">
+            <button class="circle-btn" type="button" data-test-prev aria-label="Témoignage précédent">←</button>
+            <button class="circle-btn" type="button" data-test-next aria-label="Témoignage suivant">→</button>
+          </div>
+        </div>
+        <div class="testimonial-viewport">
+          <div class="testimonial-track">
+            <article class="testimonial-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>L'outil nous donne un langage commun avec les habitants : une photo, un score, puis des gestes classés par urgence. C'est concret et facile à expliquer en réunion de quartier.</blockquote>
+              <div class="person">
+                <div class="person-photo" aria-hidden="true">ML</div>
+                <span><b>Marie L.</b><small>Responsable prévention · Commune littorale</small></span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>Nos équipes pouvaient enfin accompagner les assurés avec un support lisible. Le rapport PDF évite les conseils trop généraux et structure le suivi avant la saison.</blockquote>
+              <div class="person">
+                <div class="person-photo" aria-hidden="true">JD</div>
+                <span><b>Julien D.</b><small>Responsable prévention · Assureur mutualiste</small></span>
+              </div>
+            </article>
+            <article class="testimonial-card">
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>Le parcours en trois priorités (immédiat, 24 h, anticiper) est compris immédiatement. Cela change la qualité des échanges avec les foyers exposés.</blockquote>
+              <div class="person">
+                <div class="person-photo" aria-hidden="true">SC</div>
+                <span><b>Sophie C.</b><small>Chargée de mission risques · Intercommunalité</small></span>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="carousel-dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+      </div>
+    </section>
+
+    <section class="trust-section section-pad" id="confiance">
+      <div class="container trust-grid">
+        <div class="trust-photo">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85" width="1000" height="1250" alt="Maison et jardin dans une lumière naturelle" loading="lazy">
+          <span class="photo-stamp">La confiance<br>au cœur du projet</span>
+        </div>
+        <div class="trust-copy">
+          <span class="eyebrow">Transparence et responsabilité</span>
+          <h2>Pourquoi VigiRisques&nbsp;?</h2>
+          <div class="trust-points">
+            <div><span class="trust-point-icon" aria-hidden="true">⌂</span><span><b>Hébergé en France</b><small>Les données sont hébergées sur le territoire français.</small></span></div>
+            <div><span class="trust-point-icon" aria-hidden="true">◷</span><span><b>Photo supprimée après analyse</b><small>Sauf contribution facultative, avec consentement révocable.</small></span></div>
+            <div><span class="trust-point-icon" aria-hidden="true">◇</span><span><b>Vie privée protégée</b><small>Anonymisation des visages, plaques et localisation précise.</small></span></div>
+            <div><span class="trust-point-icon" aria-hidden="true">✓</span><span><b>Un éclairage, pas un diagnostic</b><small>Le niveau de confiance est affiché. L'outil aide à décider et ne remplace pas un diagnostic professionnel.</small></span></div>
+          </div>
+          <a class="text-link" href="confidentialite.html">Lire la politique de confidentialité <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources section-pad" id="ressources">
+      <div class="container">
+        <div class="resource-head">
+          <div>
+            <span class="eyebrow">Pour aller plus loin</span>
+            <h2>Les bons repères, au bon moment.</h2>
+          </div>
+        </div>
+        <div class="resource-grid">
+          <a class="resource-card" href="guides/preparer-terrasse.html">
+            <div class="resource-image resource-one"><span>GUIDE PRATIQUE</span><b aria-hidden="true">☀</b></div>
+            <div class="resource-meta">HABITAT <span>·</span> 6 min</div>
+            <h3>Préparer sa terrasse avant un cyclone</h3>
+            <span class="text-link">Lire le guide <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="resource-card" href="guides/anticiper-saison-cyclonique.html">
+            <div class="resource-image resource-two"><span>COMPRENDRE</span><b aria-hidden="true">⌂</b></div>
+            <div class="resource-meta">PRÉVENTION <span>·</span> 5 min</div>
+            <h3>Pourquoi anticiper la saison cyclonique</h3>
+            <span class="text-link">Lire l'article <span aria-hidden="true">↗</span></span>
+          </a>
+          <a class="resource-card" href="guides/collectivites-prevention.html">
+            <div class="resource-image resource-three"><span>COLLECTIVITÉS</span><b aria-hidden="true">◎</b></div>
+            <div class="resource-meta">TERRITOIRES <span>·</span> 7 min</div>
+            <h3>Guide prévention pour les mairies et EPCI</h3>
+            <span class="text-link">Découvrir <span aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-pad" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div class="section-heading">
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2 id="faq-title">Ce qu'il faut savoir sur VigiRisques.</h2>
+          <p>Des réponses claires pour les équipes qui évaluent la solution, les habitants accompagnés et les partenaires assureurs.</p>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>Qu'est-ce que VigiRisques&nbsp;?</summary>
+            <p>VigiRisques est une solution numérique de prévention cyclonique. À partir d'une photo de l'extérieur d'une habitation, elle aide à repérer les éléments exposés, calcule un score de résilience et propose un plan d'action priorisé, exportable en PDF.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Pour qui est destinée la solution&nbsp;?</summary>
+            <p>Elle s'adresse aux collectivités (mairies, intercommunalités), aux assureurs et aux courtiers qui souhaitent sensibiliser et accompagner les habitants avant la saison cyclonique, notamment en outre-mer et sur les territoires exposés.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Où sont hébergées les données&nbsp;?</summary>
+            <p>Les données sont hébergées en France. Les photos sont supprimées après analyse, sauf contribution facultative avec consentement révocable. Les visages, plaques et localisations précises sont anonymisés.</p>
+          </details>
+          <details class="faq-item">
+            <summary>VigiRisques remplace-t-il un diagnostic professionnel&nbsp;?</summary>
+            <p>Non. VigiRisques fournit un éclairage et un plan d'actions concrètes. Le niveau de confiance de chaque détection est affiché. L'outil n'est pas un diagnostic technique certifié.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Comment obtenir une démonstration&nbsp;?</summary>
+            <p>Utilisez le bouton « Demander une démonstration » ou écrivez à <a href="mailto:contact@vigirisques.fr">contact@vigirisques.fr</a>. Nous vous recontactons pour présenter le parcours adapté à votre organisation.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta section-pad" id="contact">
+      <div class="container cta-card">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85" width="1800" height="900" alt="Maison ouverte sur un jardin, symbole de prévention avant la saison cyclonique" loading="lazy">
+        <div class="cta-overlay"></div>
+        <div class="cta-content">
+          <span class="eyebrow light">Chaque saison se prépare</span>
+          <h2>Anticipez avant<br>la saison.</h2>
+          <p>Parlons de votre territoire ou de votre portefeuille d'assurés. Une démonstration suffit pour démarrer.</p>
+          <button class="btn btn-light" type="button" data-demo>Demander une démonstration <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand-col">
+        <a class="brand brand-light" href="#top">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 3 34 9v10c0 9-6 14-14 18C12 33 6 28 6 19V9L20 3Z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M12 21c5-1 8-5 10-11 2 7 4 10 8 12-4 1-7 4-10 8-2-5-4-7-8-9Z" fill="currentColor"/></svg></span>
+          <span>vigi<span>risques</span></span>
+        </a>
+        <p>La prévention cyclonique<br>à hauteur d'habitant.</p>
+        <a class="footer-mail" href="mailto:contact@vigirisques.fr">contact@vigirisques.fr</a>
+      </div>
+      <div class="footer-col">
+        <b>Solutions</b>
+        <a href="#solutions-collectivites">Collectivités</a>
+        <a href="#solutions-assurances">Assurances</a>
+        <a href="#demo-produit">La démonstration</a>
+      </div>
+      <div class="footer-col">
+        <b>Ressources</b>
+        <a href="guides/preparer-terrasse.html">Guide terrasse</a>
+        <a href="guides/anticiper-saison-cyclonique.html">Saison cyclonique</a>
+        <a href="guides/collectivites-prevention.html">Guide collectivités</a>
+      </div>
+      <div class="footer-col">
+        <b>Entreprise</b>
+        <a href="mailto:contact@vigirisques.fr">Contact</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Politique de confidentialité</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> VigiRisques. Tous droits réservés.</span>
+      <span class="funding">Projet accompagné par la Région <i>·</i> Données hébergées en France</span>
+      <a href="#top">Retour en haut ↑</a>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" role="region" aria-label="Préférences cookies">
+    <div>
+      <b>Votre confidentialité compte.</b>
+      <p>Nous utilisons uniquement les cookies nécessaires au fonctionnement de ce site. <a href="confidentialite.html">En savoir plus</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button class="btn btn-cookie" type="button" data-cookie="refuse">Refuser</button>
+      <button class="btn btn-cookie accept" type="button" data-cookie="accept">Accepter</button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="demo-modal" aria-hidden="true">
+    <section class="demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="Fermer la fenêtre">×</button>
+      <div class="modal-aside">
+        <span class="eyebrow light">Parlons prévention</span>
+        <h2>Voyons ce que VigiRisques peut apporter à votre organisation.</h2>
+        <p>Présentez-nous votre besoin. Notre équipe vous recontactera sous 24 heures ouvrées.</p>
+        <div class="modal-aside-note">Données hébergées en France<br>contact@vigirisques.fr</div>
+      </div>
+      <div class="modal-form-wrap">
+        <span class="eyebrow">Demande de démonstration</span>
+        <h2 id="modal-title">Faisons connaissance.</h2>
+        <form id="demo-form" action="mailto:contact@vigirisques.fr" method="post" enctype="text/plain">
+          <label>Nom et prénom<input name="name" autocomplete="name" required placeholder="Votre nom" maxlength="120"></label>
+          <label>Organisation<input name="organization" autocomplete="organization" required placeholder="Votre collectivité ou entreprise" maxlength="160"></label>
+          <label>Email professionnel<input name="email" type="email" autocomplete="email" required placeholder="vous@organisation.fr" maxlength="160"></label>
+          <label>Vous êtes
+            <select name="profile" required>
+              <option value="">Sélectionnez votre profil</option>
+              <option value="collectivite">Mairie ou collectivité</option>
+              <option value="assureur">Assureur ou courtier</option>
+              <option value="autre">Autre</option>
+            </select>
+          </label>
+          <label class="consent"><input type="checkbox" name="consent" required> J'accepte d'être recontacté au sujet de ma demande. Voir la <a href="confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.</label>
+          <button class="btn btn-primary form-submit" type="submit">Envoyer ma demande <span aria-hidden="true">↗</span></button>
+          <p class="form-legal">Vos informations sont utilisées uniquement pour répondre à votre demande. Aucune donnée n'est revendue.</p>
+        </form>
+        <div class="form-success" hidden>
+          <span aria-hidden="true">✓</span>
+          <h3>Merci pour votre intérêt !</h3>
+          <p>Votre client e-mail s'ouvre avec le message prérempli. Vous pouvez aussi écrire à <a href="mailto:contact@vigirisques.fr">contact@vigirisques.fr</a>.</p>
+          <button class="btn btn-outline" type="button" data-close>Fermer</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

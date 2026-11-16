@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture — Documentation</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav class="sidebar" aria-label="Navigation documentation">
+    <div class="sidebar-header">
+      <a href="../index.html" class="logo">Docs VigiRisques</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer le thème"><span class="theme-icon">◐</span></button>
+    </div>
+    <ul class="nav-list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li class="nav-section">Features
+        <ul>
+          <li><a href="../features/responsive-design.html">Responsive & design</a></li>
+        </ul>
+      </li>
+      <li class="nav-section">Architecture
+        <ul>
+          <li><a href="overview.html" aria-current="page">Vue d'ensemble</a></li>
+        </ul>
+      </li>
+      <li><a href="../changelog.html">Changelog</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <header class="page-header">
+      <h1>Architecture</h1>
+      <div class="meta">
+        <span class="badge badge-version">v1.1.0</span>
+        <span class="meta-date">Mis à jour le 2026-11-16</span>
+      </div>
+    </header>
+    <section class="doc-section">
+      <h2>Structure</h2>
+      <div class="code-block">
+        <div class="code-header"><span>Arborescence</span></div>
+        <pre><code>vigirisques/
+├── index.html      # Landing page
+├── styles.css      # Design system + responsive
+├── script.js       # Interactions (nav, démo, modal, cookies)
+├── README.md
+└── Documentation/  # Docs HTML</code></pre>
+      </div>
+    </section>
+    <section class="doc-section">
+      <h2>Principes</h2>
+      <ul>
+        <li>Statique : aucun build, ouvrir <code>index.html</code> ou servir en HTTP local</li>
+        <li>Tokens CSS en <code>:root</code> comme source de vérité visuelle</li>
+        <li>Surfaces en alternance <code>--surface-0</code> … <code>--surface-3</code></li>
+        <li>JS vanilla sans dépendance</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    }
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');
+  </script>
+</body>
+</html>
