@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.vigirisques.fr/sitemap.xml
+Sitemap: https://leo-segalini.github.io/vigirisques/sitemap.xml

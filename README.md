@@ -9,7 +9,7 @@ Landing page responsive, SEO/GEO-ready, en HTML, CSS et JavaScript natifs.
 ## Déploiement
 1. Publier tout le dossier (hors `Documentation/` si vous ne souhaitez pas l'exposer).
 2. Pointer le domaine vers `index.html`.
-3. Vérifier que `https://www.vigirisques.fr` est correct dans `sitemap.xml`, `robots.txt` et les balises `canonical` / Open Graph (adapter si autre domaine).
+3. Vérifier que `https://leo-segalini.github.io/vigirisques` est correct dans `sitemap.xml`, `robots.txt` et les balises `canonical` / Open Graph (adapter si autre domaine).
 4. Le formulaire de démonstration ouvre un e-mail prérempli vers `contact@vigirisques.fr` (mailto). Brancher un CRM/API si besoin.
 
 ## Fichiers
