@@ -209,6 +209,12 @@ function showFormSuccess(form) {
  * Envoi HTTP vers la boîte destinataire (sans ouvrir le client mail).
  * Utilisé quand le Worker Cloudflare/Brevo n'est pas configuré.
  */
+const PROFILE_LABELS = {
+  collectivite: "Mairie ou collectivité",
+  assureur: "Assureur ou courtier",
+  autre: "Autre",
+};
+
 async function sendViaFormEndpoint(payload) {
   const res = await fetch(
     `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_EMAIL)}`,
@@ -219,10 +225,11 @@ async function sendViaFormEndpoint(payload) {
         Accept: "application/json",
       },
       body: JSON.stringify({
-        name: payload.name,
-        organisation: payload.organization,
-        email: payload.email,
-        profil: payload.profile,
+        "Nom": payload.name,
+        "Organisation": payload.organization,
+        "Email": payload.email,
+        "Profil": PROFILE_LABELS[payload.profile] || payload.profile,
+        "Message": "Demande de démonstration depuis le site IA VigiRisque.",
         _subject: `Demande de démonstration IA VigiRisque — ${
           payload.organization || payload.name
         }`,
