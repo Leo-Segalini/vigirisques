@@ -149,7 +149,8 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-const CONTACT_EMAIL = "contact@vigirisques.fr";
+const CONTACT_EMAIL =
+  window.VIGIRISQUES_CONFIG?.formToEmail?.trim() || "ali@iroko.io";
 
 function setFormError(message) {
   const el = $("#form-error");

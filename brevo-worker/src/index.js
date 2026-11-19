@@ -68,7 +68,7 @@ function validatePayload(body) {
 }
 
 async function sendBrevoEmail(env, data) {
-  const toEmail = env.FORM_TO_EMAIL || "contact@vigirisques.fr";
+  const toEmail = env.FORM_TO_EMAIL || "ali@iroko.io";
   const fromEmail = env.FORM_FROM_EMAIL || toEmail;
   const fromName = env.FORM_FROM_NAME || "IA VigiRisque";
   const profileLabel = PROFILE_LABELS[data.profile] || data.profile;

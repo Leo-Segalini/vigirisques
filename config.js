@@ -1,8 +1,9 @@
 /**
  * Configuration publique uniquement (pas de secrets).
  * formApiUrl vide = fallback mailto (prod non bloquée sans Cloudflare).
- * Après déploiement du Worker : coller l'URL *.workers.dev
+ * formToEmail = destinataire des demandes de démonstration.
  */
 window.VIGIRISQUES_CONFIG = {
   formApiUrl: "",
+  formToEmail: "ali@iroko.io",
 };

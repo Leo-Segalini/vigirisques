@@ -88,7 +88,7 @@
   --container: 1180px;
   --container-wide: 1320px;
   --gutter: clamp(24px, 4.5vw, 40px);
-  --header-h: 82px;
+  --header-h: 92px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -197,11 +197,12 @@ h3 { color: var(--ink); }
 }
 .brand-logo {
   display: block;
-  height: 40px;
+  height: clamp(48px, 7vw, 64px);
   width: auto;
-  max-width: min(200px, 48vw);
+  max-width: min(280px, 62vw);
   object-fit: contain;
   object-position: left center;
+  border-radius: 8px;
 }
 .brand-mark { width: 36px; height: 36px; display: grid; place-items: center; }
 .brand-mark svg,
@@ -1608,10 +1609,10 @@ main#contenu {
 .brand-light { color: #fff; }
 .brand-light .brand-mark { color: #C5DAF7; }
 .brand-light .brand-logo {
-  height: 44px;
-  background: #fff;
-  border-radius: 8px;
-  padding: 4px 8px;
+  height: clamp(52px, 8vw, 68px);
+  max-width: min(300px, 70vw);
+  padding: 0;
+  background: transparent;
 }
 .footer-brand-col > p {
   font-size: var(--text-sm);
@@ -1880,7 +1881,7 @@ main#contenu {
    Responsive — menu hamburger (avant l'écrasement)
    ========================================================= */
 @media (max-width: 1120px) {
-  :root { --header-h: 72px; }
+  :root { --header-h: 84px; }
 
   /*
     backdrop-filter sur .site-header crée un containing block :
@@ -1965,7 +1966,7 @@ main#contenu {
    Responsive — large tablet / small desktop
    ========================================================= */
 @media (max-width: 1100px) {
-  :root { --header-h: 72px; }
+  :root { --header-h: 84px; }
 
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -1995,7 +1996,7 @@ main#contenu {
    Responsive — tablet
    ========================================================= */
 @media (max-width: 900px) {
-  :root { --header-h: 70px; }
+  :root { --header-h: 80px; }
 
   .hero {
     grid-template-columns: 1fr;
