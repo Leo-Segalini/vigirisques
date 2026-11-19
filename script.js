@@ -104,8 +104,30 @@ const modal = $("#demo-modal");
 const firstField = $('input[name="name"]');
 let lastFocus = null;
 
+let formSuccessTimer = null;
+
+function resetDemoForm() {
+  const form = $("#demo-form");
+  const success = $(".form-success");
+  const title = $("#modal-title");
+  const eyebrow = $(".modal-form-wrap .eyebrow");
+  if (form) {
+    form.hidden = false;
+    form.reset();
+  }
+  if (success) success.hidden = true;
+  if (title) title.hidden = false;
+  if (eyebrow) eyebrow.hidden = false;
+  setFormError("");
+}
+
 function openModal() {
   lastFocus = document.activeElement;
+  if (formSuccessTimer) {
+    clearTimeout(formSuccessTimer);
+    formSuccessTimer = null;
+  }
+  resetDemoForm();
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
@@ -114,9 +136,14 @@ function openModal() {
 }
 
 function closeModal() {
+  if (formSuccessTimer) {
+    clearTimeout(formSuccessTimer);
+    formSuccessTimer = null;
+  }
   modal.classList.remove("open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  resetDemoForm();
   lastFocus?.focus();
 }
 
@@ -162,7 +189,20 @@ function setFormError(message) {
 function showFormSuccess(form) {
   form.hidden = true;
   const success = $(".form-success");
-  if (success) success.hidden = false;
+  const title = $("#modal-title");
+  const eyebrow = $(".modal-form-wrap .eyebrow");
+  if (title) title.hidden = true;
+  if (eyebrow) eyebrow.hidden = true;
+  if (success) {
+    success.hidden = false;
+    success.focus?.();
+  }
+  // Laisse le message visible puis ferme la modale
+  if (formSuccessTimer) clearTimeout(formSuccessTimer);
+  formSuccessTimer = setTimeout(() => {
+    formSuccessTimer = null;
+    closeModal();
+  }, 1800);
 }
 
 /**
