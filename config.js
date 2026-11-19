@@ -1,7 +1,7 @@
 /**
  * Configuration publique uniquement (pas de secrets).
- * formApiUrl vide = fallback mailto (prod non bloquée sans Cloudflare).
- * formToEmail = destinataire des demandes de démonstration.
+ * formApiUrl vide = envoi HTTP vers formToEmail (sans ouvrir le client mail).
+ * formApiUrl renseigné = Cloudflare Worker + Brevo.
  */
 window.VIGIRISQUES_CONFIG = {
   formApiUrl: "",

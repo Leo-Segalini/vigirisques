@@ -31,7 +31,7 @@
     </header>
     <section class="doc-section">
       <h2>Principe</h2>
-      <p>Le front appelle un Cloudflare Worker si <code>formApiUrl</code> est renseigné. Sinon, fallback <code>mailto:</code> vers <code>ali@iroko.io</code> — la prod reste utilisable sans Cloudflare. Avec Worker, la clé Brevo reste côté serveur.</p>
+      <p>Si <code>formApiUrl</code> est renseigné : Cloudflare Worker + Brevo. Sinon : envoi HTTP vers <code>ali@iroko.io</code> (sans ouvrir le client mail). La clé Brevo reste hors du front.</p>
     </section>
     <section class="doc-section">
       <h2>Fichier <code>.env</code> (racine)</h2>

@@ -165,22 +165,58 @@ function showFormSuccess(form) {
   if (success) success.hidden = false;
 }
 
-/** Fallback sans Cloudflare : ouvre le client mail prérempli. */
-function sendViaMailto(payload) {
-  const subject = encodeURIComponent(
-    `Demande de démonstration — ${payload.organization || payload.name || "IA VigiRisque"}`
+/**
+ * Envoi HTTP vers la boîte destinataire (sans ouvrir le client mail).
+ * Utilisé quand le Worker Cloudflare/Brevo n'est pas configuré.
+ */
+async function sendViaFormEndpoint(payload) {
+  const res = await fetch(
+    `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_EMAIL)}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: payload.name,
+        organisation: payload.organization,
+        email: payload.email,
+        profil: payload.profile,
+        _subject: `Demande de démonstration IA VigiRisque — ${
+          payload.organization || payload.name
+        }`,
+        _template: "table",
+        _captcha: "false",
+        _replyto: payload.email,
+      }),
+    }
   );
-  const body = encodeURIComponent(
-    [
-      `Nom : ${payload.name}`,
-      `Organisation : ${payload.organization}`,
-      `Email : ${payload.email}`,
-      `Profil : ${payload.profile}`,
-      "",
-      "Demande envoyée depuis le site IA VigiRisque.",
-    ].join("\n")
-  );
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  const result = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    throw new Error(
+      result.message ||
+        result.error ||
+        "Envoi impossible pour le moment. Réessayez dans quelques instants."
+    );
+  }
+}
+
+async function sendDemoRequest(payload) {
+  const apiUrl = window.VIGIRISQUES_CONFIG?.formApiUrl?.trim();
+  if (apiUrl) {
+    const res = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const result = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(result.error || "Envoi impossible pour le moment.");
+    }
+    return;
+  }
+  await sendViaFormEndpoint(payload);
 }
 
 $("#demo-form")?.addEventListener("submit", async (e) => {
@@ -205,15 +241,7 @@ $("#demo-form")?.addEventListener("submit", async (e) => {
     return;
   }
 
-  const apiUrl = window.VIGIRISQUES_CONFIG?.formApiUrl?.trim();
   setFormError("");
-
-  // Pas de Worker Cloudflare → mailto, la prod reste utilisable
-  if (!apiUrl) {
-    sendViaMailto(payload);
-    showFormSuccess(form);
-    return;
-  }
 
   if (submitBtn) {
     submitBtn.disabled = true;
@@ -221,20 +249,13 @@ $("#demo-form")?.addEventListener("submit", async (e) => {
   }
 
   try {
-    const res = await fetch(apiUrl, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    const result = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      throw new Error(result.error || "Envoi impossible pour le moment.");
-    }
+    await sendDemoRequest(payload);
     showFormSuccess(form);
-  } catch {
-    // API indisponible → bascule mailto plutôt que bloquer
-    sendViaMailto(payload);
-    showFormSuccess(form);
+  } catch (err) {
+    setFormError(
+      err?.message ||
+        `Envoi impossible pour le moment. Écrivez à ${CONTACT_EMAIL}.`
+    );
   } finally {
     if (submitBtn) {
       submitBtn.disabled = false;
