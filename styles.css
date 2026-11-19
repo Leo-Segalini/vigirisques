@@ -1755,11 +1755,28 @@ main#contenu {
   flex-shrink: 0;
 }
 .form-submit { width: 100%; min-height: 48px; }
+.form-submit[aria-busy="true"] { opacity: 0.7; cursor: wait; }
 .form-legal {
   font-size: 0.6875rem;
   color: var(--muted-soft);
   text-align: center;
   margin: 0;
+}
+.form-error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--risk-high-bg);
+  color: var(--risk-high);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+}
+.honeypot {
+  position: absolute !important;
+  left: -10000px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
 }
 .form-success {
   text-align: center;

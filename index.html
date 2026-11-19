@@ -613,7 +613,7 @@
       <div class="modal-form-wrap">
         <span class="eyebrow">Demande de démonstration</span>
         <h2 id="modal-title">Faisons connaissance.</h2>
-        <form id="demo-form" action="mailto:contact@vigirisques.fr" method="post" enctype="text/plain">
+        <form id="demo-form">
           <label>Nom et prénom<input name="name" autocomplete="name" required placeholder="Votre nom" maxlength="120"></label>
           <label>Organisation<input name="organization" autocomplete="organization" required placeholder="Votre collectivité ou entreprise" maxlength="160"></label>
           <label>Email professionnel<input name="email" type="email" autocomplete="email" required placeholder="vous@organisation.fr" maxlength="160"></label>
@@ -625,19 +625,22 @@
               <option value="autre">Autre</option>
             </select>
           </label>
-          <label class="consent"><input type="checkbox" name="consent" required> J'accepte d'être recontacté au sujet de ma demande. Voir la <a href="confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.</label>
+          <label class="honeypot" aria-hidden="true">Ne pas remplir<input name="website" tabindex="-1" autocomplete="off"></label>
+          <label class="consent"><input type="checkbox" name="consent" value="true" required> J'accepte d'être recontacté au sujet de ma demande. Voir la <a href="confidentialite.html" target="_blank" rel="noopener">politique de confidentialité</a>.</label>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
           <button class="btn btn-primary form-submit" type="submit">Envoyer ma demande <span aria-hidden="true">↗</span></button>
           <p class="form-legal">Vos informations sont utilisées uniquement pour répondre à votre demande. Aucune donnée n'est revendue.</p>
         </form>
         <div class="form-success" hidden>
           <span aria-hidden="true">✓</span>
           <h3>Merci pour votre intérêt !</h3>
-          <p>Votre client e-mail s'ouvre avec le message prérempli. Vous pouvez aussi écrire à <a href="mailto:contact@vigirisques.fr">contact@vigirisques.fr</a>.</p>
+          <p>Votre demande a bien été envoyée. Nous vous répondons sous 24 heures ouvrées.</p>
           <button class="btn btn-outline" type="button" data-close>Fermer</button>
         </div>
       </div>
     </section>
   </div>
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

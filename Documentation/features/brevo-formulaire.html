@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire Brevo — Documentation</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <nav class="sidebar" aria-label="Navigation documentation">
+    <div class="sidebar-header">
+      <a href="../index.html" class="logo">Docs IA VigiRisques</a>
+    </div>
+    <ul class="nav-list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li class="nav-section">Features
+        <ul>
+          <li><a href="brevo-formulaire.html" aria-current="page">Formulaire Brevo</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <main class="content">
+    <header class="page-header">
+      <h1>Formulaire Brevo (sans BDD)</h1>
+      <div class="meta">
+        <span class="badge badge-version">v1.4.0</span>
+        <span class="meta-date">Mis à jour le 2026-11-19</span>
+      </div>
+    </header>
+    <section class="doc-section">
+      <h2>Principe</h2>
+      <p>Le front appelle un Cloudflare Worker. Le Worker détient <code>BREVO_API_KEY</code> et envoie un e-mail transactionnel. Aucune base de données.</p>
+    </section>
+    <section class="doc-section">
+      <h2>Déploiement</h2>
+      <ol>
+        <li>Créer une clé API Brevo (SMTP transactionnel).</li>
+        <li>Vérifier l'expéditeur <code>contact@vigirisques.fr</code> dans Brevo.</li>
+        <li><code>cd brevo-worker && npm i && npx wrangler login</code></li>
+        <li><code>npx wrangler secret put BREVO_API_KEY</code></li>
+        <li><code>npm run deploy</code> → récupérer l'URL <code>*.workers.dev</code></li>
+        <li>Coller l'URL dans <code>config.js</code> → <code>formApiUrl</code></li>
+        <li>Pousser le site GitHub Pages</li>
+      </ol>
+    </section>
+    <section class="doc-section">
+      <h2>Sécurité</h2>
+      <ul class="checklist">
+        <li class="check-pass">✅ Clé API hors du front</li>
+        <li class="check-pass">✅ CORS restreint aux origines autorisées</li>
+        <li class="check-pass">✅ Validation serveur + honeypot</li>
+        <li class="check-warn">⚠️ L'e-mail expéditeur doit être vérifié chez Brevo</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+name = "vigirisques-form"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Secrets (à configurer, jamais commités) :
+#   npx wrangler secret put BREVO_API_KEY
+# Variables optionnelles via [vars] ou secrets :
+#   FORM_TO_EMAIL, FORM_FROM_EMAIL, FORM_FROM_NAME
+
+[vars]
+FORM_TO_EMAIL = "contact@vigirisques.fr"
+FORM_FROM_EMAIL = "contact@vigirisques.fr"
+FORM_FROM_NAME = "IA VigiRisques"
+ALLOWED_ORIGINS = "https://leo-segalini.github.io,http://127.0.0.1:8000,http://localhost:8000,http://127.0.0.1:8777,http://localhost:8777"

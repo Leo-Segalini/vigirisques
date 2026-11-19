@@ -147,32 +147,68 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-$("#demo-form")?.addEventListener("submit", (e) => {
+function setFormError(message) {
+  const el = $("#form-error");
+  if (!el) return;
+  el.hidden = !message;
+  el.textContent = message || "";
+}
+
+$("#demo-form")?.addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.currentTarget;
   if (!form.reportValidity()) return;
 
+  const submitBtn = form.querySelector(".form-submit");
   const data = new FormData(form);
-  const lines = [
-    `Nom: ${data.get("name") || ""}`,
-    `Organisation: ${data.get("organization") || ""}`,
-    `Email: ${data.get("email") || ""}`,
-    `Profil: ${data.get("profile") || ""}`,
-    "",
-    "Demande de démonstration IA VigiRisques envoyée depuis le site.",
-  ];
-  const subject = encodeURIComponent("Demande de démonstration IA VigiRisques");
-  const body = encodeURIComponent(lines.join("\n"));
-  const mailto = `mailto:contact@vigirisques.fr?subject=${subject}&body=${body}`;
+  const payload = {
+    name: String(data.get("name") || "").trim(),
+    organization: String(data.get("organization") || "").trim(),
+    email: String(data.get("email") || "").trim(),
+    profile: String(data.get("profile") || "").trim(),
+    consent: data.get("consent") === "on" || data.get("consent") === "true",
+    website: String(data.get("website") || "").trim(), // honeypot
+  };
 
-  form.hidden = true;
-  const success = $(".form-success");
-  if (success) success.hidden = false;
+  const apiUrl = window.VIGIRISQUES_CONFIG?.formApiUrl?.trim();
+  setFormError("");
 
-  // Ouvre le client mail sans bloquer l'UI en cas de blocage navigateur
-  window.setTimeout(() => {
-    window.location.href = mailto;
-  }, 150);
+  if (!apiUrl) {
+    setFormError(
+      "Formulaire non configuré. Écrivez-nous à contact@vigirisques.fr."
+    );
+    return;
+  }
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.setAttribute("aria-busy", "true");
+  }
+
+  try {
+    const res = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    const result = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(result.error || "Envoi impossible pour le moment.");
+    }
+    form.hidden = true;
+    const success = $(".form-success");
+    if (success) success.hidden = false;
+  } catch (err) {
+    setFormError(
+      err?.message ||
+        "Envoi impossible pour le moment. Réessayez ou écrivez à contact@vigirisques.fr."
+    );
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.removeAttribute("aria-busy");
+    }
+  }
 });
 
 const cookieBanner = $(".cookie-banner");
