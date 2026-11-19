@@ -8,6 +8,7 @@ const MQ_NAV = 1120;
 function setNavOpen(open) {
   mainNav?.classList.toggle("open", open);
   menuToggle?.setAttribute("aria-expanded", String(open));
+  menuToggle?.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
   document.body.classList.toggle("nav-open", open);
   if (!open) {
     $$(".nav-dropdown.open").forEach((d) => {
@@ -17,7 +18,8 @@ function setNavOpen(open) {
   }
 }
 
-menuToggle?.addEventListener("click", () => {
+menuToggle?.addEventListener("click", (e) => {
+  e.stopPropagation();
   setNavOpen(!mainNav.classList.contains("open"));
 });
 

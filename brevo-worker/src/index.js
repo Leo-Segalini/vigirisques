@@ -70,7 +70,7 @@ function validatePayload(body) {
 async function sendBrevoEmail(env, data) {
   const toEmail = env.FORM_TO_EMAIL || "contact@vigirisques.fr";
   const fromEmail = env.FORM_FROM_EMAIL || toEmail;
-  const fromName = env.FORM_FROM_NAME || "IA VigiRisques";
+  const fromName = env.FORM_FROM_NAME || "IA VigiRisque";
   const profileLabel = PROFILE_LABELS[data.profile] || data.profile;
 
   const htmlContent = `
@@ -81,7 +81,7 @@ async function sendBrevoEmail(env, data) {
     <p><strong>Profil :</strong> ${escapeHtml(profileLabel)}</p>
     <p><strong>Consentement :</strong> oui</p>
     <hr>
-    <p style="color:#666;font-size:12px">Envoyé depuis le site IA VigiRisques (Brevo).</p>
+    <p style="color:#666;font-size:12px">Envoyé depuis le site IA VigiRisque (Brevo).</p>
   `;
 
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {

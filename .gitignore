@@ -4,10 +4,12 @@ Thumbs.db
 .idea/
 .vscode/
 .env
-.env.*
+.env.local
 .dev.vars
 **/.dev.vars
 **/.wrangler/
 brevo-worker/node_modules/
+!.env.example
+!brevo-worker/.env.example
 
 exemplepicture/

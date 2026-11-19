@@ -1,0 +1,8 @@
+{
+  "name": "vigirisques",
+  "private": true,
+  "scripts": {
+    "deploy:form": "npm --prefix brevo-worker run deploy",
+    "secret:brevo": "npm --prefix brevo-worker run secret:brevo"
+  }
+}

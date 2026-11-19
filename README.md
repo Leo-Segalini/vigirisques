@@ -1,4 +1,4 @@
-# IA VigiRisques — landing page
+# IA VigiRisque — landing page
 
 Landing page responsive, SEO/GEO-ready, en HTML, CSS et JavaScript natifs.
 
