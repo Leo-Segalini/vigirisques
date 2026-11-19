@@ -229,8 +229,8 @@ async function sendViaFormEndpoint(payload) {
         "Organisation": payload.organization,
         "Email": payload.email,
         "Profil": PROFILE_LABELS[payload.profile] || payload.profile,
-        "Message": "Demande de démonstration depuis le site IA VigiRisque.",
-        _subject: `Demande de démonstration IA VigiRisque — ${
+        "Message": "Demande de démonstration depuis le site IA VigiRisques.",
+        _subject: `Demande de démonstration IA VigiRisques — ${
           payload.organization || payload.name
         }`,
         _template: "table",
