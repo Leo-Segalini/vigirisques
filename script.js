@@ -149,11 +149,37 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+const CONTACT_EMAIL = "contact@vigirisques.fr";
+
 function setFormError(message) {
   const el = $("#form-error");
   if (!el) return;
   el.hidden = !message;
   el.textContent = message || "";
+}
+
+function showFormSuccess(form) {
+  form.hidden = true;
+  const success = $(".form-success");
+  if (success) success.hidden = false;
+}
+
+/** Fallback sans Cloudflare : ouvre le client mail prérempli. */
+function sendViaMailto(payload) {
+  const subject = encodeURIComponent(
+    `Demande de démonstration — ${payload.organization || payload.name || "IA VigiRisque"}`
+  );
+  const body = encodeURIComponent(
+    [
+      `Nom : ${payload.name}`,
+      `Organisation : ${payload.organization}`,
+      `Email : ${payload.email}`,
+      `Profil : ${payload.profile}`,
+      "",
+      "Demande envoyée depuis le site IA VigiRisque.",
+    ].join("\n")
+  );
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
 }
 
 $("#demo-form")?.addEventListener("submit", async (e) => {
@@ -172,13 +198,19 @@ $("#demo-form")?.addEventListener("submit", async (e) => {
     website: String(data.get("website") || "").trim(), // honeypot
   };
 
+  // Honeypot : succès silencieux, pas d'envoi
+  if (payload.website) {
+    showFormSuccess(form);
+    return;
+  }
+
   const apiUrl = window.VIGIRISQUES_CONFIG?.formApiUrl?.trim();
   setFormError("");
 
+  // Pas de Worker Cloudflare → mailto, la prod reste utilisable
   if (!apiUrl) {
-    setFormError(
-      "Formulaire non configuré. Écrivez-nous à contact@vigirisques.fr."
-    );
+    sendViaMailto(payload);
+    showFormSuccess(form);
     return;
   }
 
@@ -197,14 +229,11 @@ $("#demo-form")?.addEventListener("submit", async (e) => {
     if (!res.ok) {
       throw new Error(result.error || "Envoi impossible pour le moment.");
     }
-    form.hidden = true;
-    const success = $(".form-success");
-    if (success) success.hidden = false;
-  } catch (err) {
-    setFormError(
-      err?.message ||
-        "Envoi impossible pour le moment. Réessayez ou écrivez à contact@vigirisques.fr."
-    );
+    showFormSuccess(form);
+  } catch {
+    // API indisponible → bascule mailto plutôt que bloquer
+    sendViaMailto(payload);
+    showFormSuccess(form);
   } finally {
     if (submitBtn) {
       submitBtn.disabled = false;

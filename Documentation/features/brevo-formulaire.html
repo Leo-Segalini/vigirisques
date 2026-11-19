@@ -31,7 +31,7 @@
     </header>
     <section class="doc-section">
       <h2>Principe</h2>
-      <p>Le front appelle un Cloudflare Worker. Le Worker détient <code>BREVO_API_KEY</code> et envoie un e-mail transactionnel. Aucune base de données. Les secrets vivent dans un <code>.env</code> local (gitignoré), jamais dans le front GitHub Pages.</p>
+      <p>Le front appelle un Cloudflare Worker si <code>formApiUrl</code> est renseigné. Sinon, fallback <code>mailto:contact@vigirisques.fr</code> — la prod reste utilisable sans Cloudflare. Avec Worker, la clé Brevo reste côté serveur.</p>
     </section>
     <section class="doc-section">
       <h2>Fichier <code>.env</code> (racine)</h2>
